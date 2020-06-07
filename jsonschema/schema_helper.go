@@ -18,6 +18,8 @@ func Validate(input , schema string ) bool {
 		for _, desc := range result.Errors() {
 			fmt.Printf("- %s\n", desc)
 		}
+
+
 		return false
 		//	t.FailNow()
 	}
