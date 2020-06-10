@@ -25,12 +25,6 @@ type tHelper interface {
 	Helper()
 }
 
-func Equal(t ,src interface{}, dst interface{}, messages ...interface{}) {
-	if !objectsAreEqual(src, dst) {
-		t. fail(fmt.Sprintf("%#v %s %#v%s", src, "does not equal", dst,
-			formatMessages(messages...)))
-	}
-}
 func formatMessages(messages ...interface{}) string {
 	// Concatenate messages together.
 	var fm strings.Builder
