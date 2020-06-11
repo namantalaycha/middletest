@@ -8,6 +8,7 @@ SMTPPASS=zpbwaqijzukxwkee
 MESSAGEBODY="uegeu eieigiger"
 SUBJECT="testing"
 
+
 sendEmail -f $SMTPFROM -t $SMTPTO -u $SUBJECT -m $MESSAGEBODY -s $SMTPSERVER -xu $SMTPUSER -xp $SMTPPASS
 
 num='ok'
