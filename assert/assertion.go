@@ -15,7 +15,7 @@ func New(t TestingT) *Assertions {
 		t: t,
 	}
 }
-git 
+
 type TestingT interface {
 	Errorf(format string, args ...interface{})
 
