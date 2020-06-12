@@ -1,4 +1,4 @@
-#!/bin/sh; C:/Program\ Files/Git/usr/bin/sh.exe;  C:\Windows\System32\wsl.exe
+#!/bin/sh; C:/Program\ Files/Git/usr/bin/sh.exe
 
 SMTPFROM=naman.talaycha@myntra.com
 SMTPTO=namanfrost10@gmail.com
