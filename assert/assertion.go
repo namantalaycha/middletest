@@ -3,7 +3,7 @@ package assert
 import (
 	"fmt"
 	"reflect"
-	"strings"
+	"testing"
 )
 type Assertions struct {
 	t TestingT
@@ -26,27 +26,17 @@ type TestingT interface {
 type tHelper interface {
 	Helper()
 }
+func Equal(t *testing.T, expected, actual interface{}, msgAndArgs ...interface{}) bool {
 
-func formatMessages(messages ...interface{}) string {
-	// Concatenate messages together.
-	var fm strings.Builder
-	for _, message := range messages {
-		fm.WriteString(" ")
-
-		// Format message then wrap with square brackets if only
-		// whitespace.
-		m := fmt.Sprintf("%v", message)
-		if strings.TrimSpace(m) == "" {
-			m = fmt.Sprintf("[%s]", m)
-		}
-		fm.WriteString(m)
+	if !objectsAreEqual(expected, actual) {
+		 t.Fail()
+		return false
 	}
+	return true
 
-	if fm.Len() == 0 {
-		return ""
-	}
-	return "," + fm.String()
 }
+
+
 
 func objectsAreEqual(a, b interface{}) bool {
 	if reflect.TypeOf(a) != reflect.TypeOf(b) {

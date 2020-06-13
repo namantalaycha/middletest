@@ -1,6 +1,8 @@
 package middletest
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func demo() {
 	fmt.Println("Hello")
