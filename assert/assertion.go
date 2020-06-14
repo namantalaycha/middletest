@@ -26,7 +26,8 @@ type TestingT interface {
 type tHelper interface {
 	Helper()
 }
-func Equal(t *testing.T, expected, actual interface{}, msgAndArgs ...interface{}) bool {
+
+func Equalt(t *testing.T, expected, actual interface{}) bool {
 
 	if !objectsAreEqual(expected, actual) {
 		 t.Fail()
@@ -36,6 +37,15 @@ func Equal(t *testing.T, expected, actual interface{}, msgAndArgs ...interface{}
 
 }
 
+func Equalb(b *testing.B, expected, actual interface{}) bool {
+
+	if !objectsAreEqual(expected, actual) {
+		b.Fail()
+		return false
+	}
+	return true
+
+}
 
 
 func objectsAreEqual(a, b interface{}) bool {

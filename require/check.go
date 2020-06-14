@@ -16,9 +16,6 @@ func New(t TestingT) *Assertions {
 	}
 }
 
-
-
-
 type TestingT interface {
 	Errorf(format string, args ...interface{})
 
@@ -36,6 +33,15 @@ func Equal(t *testing.T, expected, actual interface{}, msgAndArgs ...interface{}
 
 }
 
+func Equalb(b *testing.B, expected, actual interface{}) bool {
+
+	if !objectsAreEqual(expected, actual) {
+		b.FailNow()
+		return false
+	}
+	return true
+
+}
 
 
 func objectsAreEqual(a, b interface{}) bool {

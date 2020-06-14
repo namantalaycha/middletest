@@ -5,7 +5,7 @@ import (
 	"github.com/xeipuuv/gojsonschema"
 )
 
-func Validate(input , schema string ) bool {
+func Validate(input, schema string) bool {
 	schemaLoader := gojsonschema.NewReferenceLoader(schema)
 	documentLoader := gojsonschema.NewReferenceLoader(input)
 
@@ -19,9 +19,8 @@ func Validate(input , schema string ) bool {
 			fmt.Printf("- %s\n", desc)
 		}
 
-
 		return false
 		//	t.FailNow()
 	}
-     return true
+	return true
 }
