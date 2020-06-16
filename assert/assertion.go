@@ -5,27 +5,6 @@ import (
 	"reflect"
 	"testing"
 )
-type Assertions struct {
-	t TestingT
-	fail func(interface{})
-}
-
-func New(t TestingT) *Assertions {
-	return &Assertions{
-		t: t,
-	}
-}
-
-
-
-
-type TestingT interface {
-	Errorf(format string, args ...interface{})
-
-}
-type tHelper interface {
-	Helper()
-}
 
 func Equalt(t *testing.T, expected, actual interface{}) bool {
 
